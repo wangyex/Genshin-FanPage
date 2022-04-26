@@ -8,6 +8,16 @@
 
 <h5 class="text-center text-muted mb-5">{{ blog.date|date:'F jS Y' }}</h5>
 
-{{ blog.description|safe }}
+{% if blog.header_image %}
+<img src = "{{ blog.header_image.url }}"width="1000" height="500">
+{% endif %}
 
+
+<br/><br/>
+{% if blog.description %}
+{{ blog.description|safe }}
+{% endif %}
+<br/><br/>
+
+{{ blog.body|safe }}
 {% endblock %}
